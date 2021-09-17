@@ -41,6 +41,7 @@ public class CreepingGame {
 
     //每走一步，drive一次
     public void drive(ArrayList<Ant> ants){
+        //不知道这段代码写的有没有问题哈！
         //先排序，按postion排
         Collections.sort(ants,new MyComparator());
         System.out.println(ants);
