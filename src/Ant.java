@@ -1,12 +1,17 @@
 public class Ant {
-    int id=0;//编号
-    int velocity=5;
-    int position=-1;//初始化为-1
-    int direction=0;//1是右，-1是左，0是出局
+    int id;//编号
+    int velocity;
+    int position;//初始化为-1
+    int direction;//1是右，-1是左，0是出局
 
-    public Ant(int id, int position, int direction) {
+    public Ant(int id, int position, int direction,int velocity) {
         this.id = id;
         this.position = position;
+        this.direction = direction;
+        this.velocity = velocity;
+    }
+
+    public void setDirection(int direction) {
         this.direction = direction;
     }
 
