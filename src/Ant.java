@@ -24,7 +24,7 @@ public class Ant {
     }
 
     public void changeDirection(){
-        this.direction=this.direction*-1;
+        this.direction=this.direction*(-1);
     }
 
     public void collision_1(){

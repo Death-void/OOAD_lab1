@@ -1,3 +1,5 @@
+import com.sun.scenario.effect.impl.sw.sse.SSEBlend_SRC_OUTPeer;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -36,7 +38,7 @@ public class CreepingGame {
             drive(onAnts);
             curClock++;
         }
-        return curClock;
+        return curClock-1;
     }
 
     //每走一步，drive一次
@@ -44,7 +46,10 @@ public class CreepingGame {
         //不知道这段代码写的有没有问题哈！
         //先排序，按postion排
         Collections.sort(ants,new MyComparator());
-        System.out.println(ants);
+        System.out.println("\ntick:"+curClock);
+        for (int i = 0; i < ants.size(); i++) {
+            System.out.print(" 蚂蚁"+ants.get(i).id+"号："+ants.get(i).position);
+        }
         //让所有蚂蚁先移动
         for (Ant ant : ants) {
             ant.creeping();
@@ -69,10 +74,10 @@ public class CreepingGame {
         }
         //恢复撞的蚂蚁到正确的位置
         for(int i = 0;i < c1.size();i++) {
-            ants.get(i).collision_1();
+            ants.get(c1.get(i)).collision_1();
         }
         for(int i = 0;i < c2.size();i++) {
-            ants.get(i).collision_2();
+            ants.get(c1.get(i)).collision_2();
         }
     }
 }
